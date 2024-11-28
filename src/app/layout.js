@@ -8,8 +8,12 @@ const inter = Inter({
 
 export const metadata = {
   title: "Shawn",
-  description: "My personal and professional portfolio. Nice to meet you!",
+  description: "My personal and professional portfolio. Nice to meet you!"
 };
+
+export const viewport = {
+  themeColor: '#6D6C60',
+}
 
 export default function RootLayout({ children }) {
   return (
