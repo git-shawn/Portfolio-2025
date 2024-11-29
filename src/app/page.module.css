@@ -1,43 +1,54 @@
 .page {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  width: 100dvw;
+  height: 100dvh;
+  overflow: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  overscroll-behavior: none;
 }
 
 .page::before {
   content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 100dvw;
+  height: 100dvh;
   background-image: url('/bozeman-resevoir-by-shawn.jpg');
   background-position: center bottom;
+  background-attachment: fixed;
   background-size: cover;
-  filter: contrast(130%) brightness(0.5);
-  /* filter: grayscale(30%) brightness(0.55) contrast(120%) sepia(30%) saturate(120%); */
-}
-
-.italic {
-  font-style: italic;
+  filter: contrast(130%) brightness(0.5) blur(var(--blur));
+  transform: scale(1.09);
 }
 
 .content {
+  scroll-snap-align: start;
   position: relative;
-  color: #FFC400;
-  max-width: 600px;
-  margin: 1em;
+  overflow: hidden;
+  overscroll-behavior: none;
+  width: 100dvw;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
 }
 
-.content h1 {
+.hero {
+  color: #FFC400;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin: 1em;
+}
+
+.hero h1 {
   font-family: var(--instrument-serif), 'Times New Roman', Times, serif;
   font-size: 80px;
-  font-weight: 900;
   line-height: 1;
 }
 
@@ -57,4 +68,62 @@
 
 .content a:hover svg {
   transform: rotate(0deg);
+}
+
+.work, .contact {
+  overflow: hidden;
+  overscroll-behavior: none;
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 1em;
+  padding: 2.5em;
+}
+
+.work {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+@media (min-width: 1200px) {
+  .flexEnd {
+    justify-content: flex-end !important;
+  }
+}
+
+.contact {
+  margin-top: 4em;
+  overflow: scroll;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 3em;
+}
+
+.contact div {
+  flex: 1;
+}
+
+.sectionHeader {
+  color: var(--beige);
+  width: 100%;
+}
+
+.sectionHeader h2 {
+  font-family: var(--instrument-serif), 'Times New Roman', Times, serif;
+  font-size: 64px;
+}
+
+.contact .sectionHeader p:first-of-type {
+  margin-bottom: 1rem;
+}
+
+.contact .sectionHeader p:nth-of-type(2) {
+  font-size: 16px;
+}
+
+.contact .sectionHeader p {
+  line-height: 1.3;
 }

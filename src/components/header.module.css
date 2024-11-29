@@ -1,0 +1,106 @@
+.header {
+    position: sticky;
+    top: 1em;
+    padding: 0.7em 1em 0.7em 1.5em;
+    border-radius: 2em;
+    margin: 1em;
+    background-color: var(--beige);
+    border: 1px solid var(--black);
+    z-index: 999;
+    opacity: var(--opacity);
+    display: flex;
+    flex-direction: column;
+    gap: 0em;
+    transition: gap 0.3s linear;
+}
+
+.header .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .row label {
+    display: none;
+}
+
+.header .title {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.header .buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+}
+
+.header .burger {
+    display: none;
+    stroke: var(--black);
+    cursor: pointer;
+}
+
+.header .burger svg {
+    width: 32px;
+    margin: 0 auto;
+    display: block;
+}
+
+.header .burger+input {
+    display: none;
+}
+
+.header:has(.burger+input:checked) {
+    gap: 1em;
+}
+
+.header:has(.burger+input:checked) .burgerButtons {
+    max-height: 500px;
+}
+
+.header .burgerButtons {
+    display: none;
+    transition: max-height 0.3s ease-in-out;
+    flex-direction: column;
+    gap: 0.6em;
+    max-height: 0px;
+    overflow: hidden;
+}
+
+.header .burgerButtons .button {
+    padding: 1em 1em !important;
+    border-radius: 2em;
+}
+
+.header .button {
+    padding: 0.2em 1em;
+    border-radius: 1em;
+    border: 1px solid var(--black);
+    transition: background 0.2s linear, color 0.1s linear;
+}
+
+.header .button:hover {
+    background: var(--black);
+    color: var(--beige);
+}
+
+.header .button.active {
+    pointer-events: none;
+    background: var(--black);
+    color: var(--beige);
+}
+
+@media (max-width: 450px) {
+    .header {
+        padding: 0.7em 1.5em 0.7em 1.5em;
+    }
+    .buttons {
+        display: none !important;
+    }
+    .burger, .burgerButtons, .header .row label {
+        display: flex !important;
+    }
+}

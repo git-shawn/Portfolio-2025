@@ -1,0 +1,112 @@
+.carousel {
+    max-width: 100%;
+    margin-top: 1.5em;
+    margin-left: 1.5em;
+    --slide-height: auto;
+    --slide-spacing: 0;
+    --slide-size: 100%;
+    --slide-spacing-sm: 1.6rem;
+    --slide-size-sm: 50%;
+    --slide-spacing-lg: 2rem;
+    --slide-size-lg: calc(100% / 4);
+}
+
+@media (max-width: 750px) {
+    .carousel {
+        margin-left: 0em;
+    }
+}
+
+@media (min-width: 1200px) {
+    .carousel {
+        margin-top: 3em;
+    }
+}
+
+.carouselViewport {
+    overflow: visible;
+}
+
+.carouselContainer {
+    backface-visibility: hidden;
+    display: flex;
+    touch-action: pan-y pinch-zoom;
+    margin-left: calc(var(--slide-spacing) * -1);
+}
+
+@media (min-width: 750px) {
+    .carouselContainer {
+        margin-left: calc(var(--slide-spacing-sm) * -1);
+    }
+}
+
+@media (min-width: 1200px) {
+    .carouselContainer {
+        margin-left: calc(var(--slide-spacing-lg) * -1);
+    }
+}
+
+.carouselSlide {
+    min-width: 0;
+    max-height: 40dvh;
+    aspect-ratio: 1;
+    flex: 0 0 var(--slide-size);
+    background-color: var(--beige);
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    cursor: pointer;
+    background-size: cover;
+    background-position: left top;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-color: var(--black);
+    background-blend-mode: screen;
+    transition: transform 0.1s linear, background-color 0.3s linear;
+}
+
+.carouselSlide:hover {
+    background-color: var(--accent);
+}
+
+.carouselSlide:not(:last-child) {
+    margin-right: 1.5em;
+}
+
+@media (min-width: 750px) {
+    .carouselSlide {
+        flex: 0 0 var(--slide-size-sm);
+    }
+}
+
+@media (min-width: 1200px) {
+    .carouselSlide {
+        flex: 0 0 var(--slide-size-lg);
+    }
+}
+
+.carouselSlide svg {
+    stroke: var(--black);
+    transform: rotate(0deg) !important;
+    padding: 1em;
+}
+
+.carouselSlide:hover svg {
+    transform: rotate(45deg) !important;
+}
+
+.carouselSlide:active {
+    transform: scale(0.98);
+}
+
+.carouselSlideTitle {
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 24px;
+    font-weight: 700;
+    height: var(--slide-height);
+    user-select: none;
+    padding: 1em;
+}
