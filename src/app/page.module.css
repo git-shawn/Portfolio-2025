@@ -7,7 +7,7 @@
   overscroll-behavior: none;
 }
 
-.page::before {
+.bgImage {
   content: "";
   position: fixed;
   overflow: hidden;
@@ -15,28 +15,24 @@
   left: 0;
   width: 100dvw;
   height: 100dvh;
-  background-image: url('/bozeman-resevoir-by-shawn.webp');
-  background-position: center bottom;
-  background-attachment: fixed;
-  background-size: cover;
   filter: contrast(130%) brightness(0.4) blur(var(--blur));
   transform: scale(1.09);
 }
 
 @media (prefers-contrast: more) {
-  .page::before {
+  .bgImage {
     filter: contrast(130%) brightness(0.2) blur(var(--blur));
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .page::before {
+  .bgImage {
     filter: contrast(130%) brightness(0.4) blur(30px);
   }
 }
 
 @media (prefers-contrast: more) and (prefers-reduced-motion: reduce) {
-  .page::before {
+  .bgImage {
     filter: contrast(130%) brightness(0.2) blur(30px);
   }
 }
@@ -87,7 +83,7 @@
 .content a svg {
   vertical-align: -12%;
   transform: rotate(-45deg);
-  transition: .2s;
+  transition: transform .2s linear;
 }
 
 .content a:hover svg {

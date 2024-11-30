@@ -33,6 +33,7 @@
     background-color: var(--beige);
     font-size: 16px;
     resize: none;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
 .form input[type="text"],
@@ -43,17 +44,19 @@
     border-radius: 4px;
     background-color: var(--beige);
     font-size: 16px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
 .form input[type="submit"] {
     padding: 0.5em 1em;
     border-radius: 2em;
     border: 1px solid var(--beige);
-    transition: background 0.2s linear, color 0.1s linear;
+    transition: background 0.2s linear, color 0.1s linear, filter 0.1s linear;
     width: fit-content;
 }
 
 .form input[type="submit"]:hover {
     background: var(--beige);
     color: var(--black);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
