@@ -73,7 +73,7 @@ export default function Home() {
         <div className={styles.work}>
           <div className={styles.sectionHeader}>
             <h2>Code</h2>
-            <p>Apps I've published, websites I've built, and code I've written.</p>
+            <p>A smattering of things I've built by writing code.</p>
           </div>
           <Carousel slides={APPS} options={CAROUSEL_OPTIONS} />
         </div>
@@ -82,7 +82,7 @@ export default function Home() {
         <div className={styles.work}>
           <div className={styles.sectionHeader}>
             <h2>Writing</h2>
-            <p>A sampling of my writing. Some for work, some just because.</p>
+            <p>A collection of various writings, some personal and some professional.</p>
           </div>
           <Carousel slides={WRITING} options={CAROUSEL_OPTIONS} />
         </div>
@@ -91,8 +91,9 @@ export default function Home() {
         <div className={styles.contact}>
           <div className={styles.sectionHeader}>
             <h2>Contact</h2>
-            <p>Always happy to chat.</p>
+            <p>Go ahead. I'm all ears.</p>
             <p>I'm actively seeking volunteer opportunities, with a particular interest in progressive organizations or projects related to equity, inclusivity, migrant support, climate justice, and prison reform. If that sounds like you, please reach out!</p>
+            <div className={styles.socialNetworks}></div>
           </div>
           <ContactForm />
         </div>

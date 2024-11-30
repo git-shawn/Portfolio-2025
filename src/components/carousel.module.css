@@ -17,7 +17,7 @@
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 750px) {
     .carousel {
         margin-top: 3em;
     }
@@ -47,6 +47,7 @@
 }
 
 .carouselSlide {
+    position: relative;
     min-width: 0;
     max-height: 40dvh;
     aspect-ratio: 1;
@@ -65,6 +66,23 @@
     background-color: var(--black);
     background-blend-mode: screen;
     transition: transform 0.1s linear, background-color 0.3s linear;
+    z-index: 0;
+}
+
+.carouselSlide::after {
+	content: '';
+	display: block;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background: rgba(127, 127, 127, 0.5);
+	background-image: radial-gradient(black 33%, transparent 33%);
+	background-size: 2px 2px;
+    mix-blend-mode: overlay;
+    z-index: 1;
+    border-radius: 2rem;
 }
 
 .carouselSlide:hover {
@@ -105,8 +123,9 @@
     box-sizing: border-box;
     width: 100%;
     font-size: 24px;
-    font-weight: 700;
+    font-weight: 500;
     height: var(--slide-height);
     user-select: none;
     padding: 1em;
+    z-index: 2;
 }

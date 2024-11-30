@@ -1,10 +1,10 @@
-import { Instrument_Sans, Instrument_Serif } from 'next/font/google'
+import { Mona_Sans, Instrument_Serif } from 'next/font/google'
 import "./globals.css";
 
-const instrumentSans = Instrument_Sans({
+const monaSans = Mona_Sans({
   weight: ["500", "700"],
   subsets: ['latin'],
-  variable: '--instrument-sans'
+  variable: '--mona-sans'
 })
 
 const instrumentSerif = Instrument_Serif({
@@ -16,10 +16,10 @@ const instrumentSerif = Instrument_Serif({
 
 export const metadata = {
   title: "Shawn",
-  description: "My personal and professional portfolio. Nice to meet you!",
+  description: "I'm a professional writer and freelance developer based in Denver, CO. This website is a collection of my work and maybe a couple of other things.",
   openGraph: {
     title: "Shawn",
-    description: "My personal and professional portfolio. Nice to meet you!",
+    description: "I'm a professional writer and freelance developer based in Denver, CO. This website is a collection of my work and maybe a couple of other things.",
     url: "www.shawndavis.work",
     siteName: "Shawn",
     local: "en_US",
@@ -40,7 +40,7 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${instrumentSans.variable} ${instrumentSerif.variable}`}>
+      <body className={`${monaSans.variable} ${instrumentSerif.variable}`}>
         {children}
       </body>
     </html>
