@@ -6,12 +6,12 @@
     margin: 1em;
     background-color: var(--beige);
     border: 1px solid var(--black);
-    z-index: 999;
     opacity: var(--opacity);
     display: flex;
     flex-direction: column;
     gap: 0em;
     transition: gap 0.3s linear;
+    z-index: 999;
 }
 
 .header .row {
@@ -54,18 +54,19 @@
 }
 
 .header:has(.burger+input:checked) {
-    gap: 1em;
+    gap: 2em;
 }
 
 .header:has(.burger+input:checked) .burgerButtons {
     max-height: 500px;
+    margin-bottom: 1em;
 }
 
 .header .burgerButtons {
     display: none;
-    transition: max-height 0.3s ease-in-out;
+    transition: max-height 0.3s ease-in-out, margin 0.3s ease-in-out;
     flex-direction: column;
-    gap: 0.6em;
+    gap: 1em;
     max-height: 0px;
     overflow: hidden;
 }

@@ -81,7 +81,7 @@ export default function Home() {
       <section ref={writeRef} id="writing" className={styles.content}>
         <div className={styles.work}>
           <div className={styles.sectionHeader}>
-            <h2>Writing</h2>
+            <h2>Copy</h2>
             <p>A collection of various writings, some personal and some professional.</p>
           </div>
           <Carousel slides={WRITING} options={CAROUSEL_OPTIONS} />

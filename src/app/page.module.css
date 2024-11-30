@@ -70,9 +70,9 @@
   transform: rotate(0deg);
 }
 
-.work, .contact {
+.work,
+.contact {
   overflow: hidden;
-  overscroll-behavior: none;
   box-sizing: border-box;
   width: 100%;
   margin-top: 1em;
@@ -80,6 +80,7 @@
 }
 
 .work {
+  overscroll-behavior: none;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -94,6 +95,7 @@
 .contact {
   margin-top: 4em;
   overflow: scroll;
+  overscroll-behavior: auto !important;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -126,4 +128,9 @@
 
 .contact .sectionHeader p {
   line-height: 1.3;
+}
+
+.contact::-webkit-scrollbar {
+  display: none;
+  /* Safari and Chrome */
 }
