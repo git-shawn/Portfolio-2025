@@ -20,7 +20,7 @@ export const metadata = {
   openGraph: {
     title: "Shawn",
     description: "I'm a professional writer and freelance developer based in Denver, CO. This website is a collection of my work and maybe a couple of other things.",
-    url: "www.shawndavis.work",
+    url: "https://www.shawndavis.work",
     siteName: "Shawn",
     local: "en_US",
     type: "website"

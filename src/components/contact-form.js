@@ -16,7 +16,7 @@ const ContactForm = () => {
 
   useEffect(() => {
     setHeight(ref.current.clientHeight)
-  })
+  }, [])
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -47,8 +47,8 @@ const ContactForm = () => {
     )
   } else {
     return (
-      <div className={styles.form} ref={ref}>
-        <form onSubmit={handleSubmit}>
+      <div className={styles.form}>
+        <form ref={ref} onSubmit={handleSubmit}>
           <label>Name
             <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Alice" required />
           </label>
