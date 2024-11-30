@@ -9,7 +9,7 @@ const Header = (props) => {
     const isViewingContact = useOnScreen(contactRef);
 
     return (
-        <header className={styles.header} style={opacityStyle} role="navigation">
+        <header className={styles.header} style={opacityStyle}>
             <div className={styles.row}>
                 <a href="#top" title="Back to top" className={styles.title}>Shawn</a>
                 <div className={styles.buttons}>
