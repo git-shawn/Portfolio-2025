@@ -121,7 +121,7 @@
 @media (max-width: 640px) {
 
   .hero h1 {
-    font-size: 64px;
+    font-size: 80px;
   }
   .content p,
   .content a {
@@ -197,5 +197,4 @@
 
 .contact::-webkit-scrollbar {
   display: none;
-  /* Safari and Chrome */
 }
