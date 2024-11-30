@@ -11,6 +11,12 @@ const ContactForm = () => {
   });
 
   const [hasSubmit, setHasSubmit] = useState(false);
+  const [height, setHeight] = useState(0)
+  const ref = useRef(null)
+
+  useEffect(() => {
+    setHeight(ref.current.clientHeight)
+  })
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -19,7 +25,7 @@ const ContactForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    fetch("https://formsubmit.co/contact@shawndavis.work", {
+    fetch("https://formsubmit.co/93d5b6e7d304bf1896f0d8f2a35f82c6", {
       method: "POST",
       headers: {
         "Accept": "application/json",
@@ -35,13 +41,13 @@ const ContactForm = () => {
 
   if (hasSubmit) {
     return (
-      <div className={styles.submission}>
+      <div className={styles.submission} style={{height: `${height}px`}}>
         <p>Thanks!</p>
       </div>
     )
   } else {
     return (
-      <div className={styles.form}>
+      <div className={styles.form} ref={ref}>
         <form onSubmit={handleSubmit}>
           <label>Name
             <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Alice" required />
