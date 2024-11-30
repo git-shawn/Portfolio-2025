@@ -1,4 +1,5 @@
 .carousel {
+    overflow-x: visible;
     max-width: 100%;
     margin-top: 1.5em;
     margin-left: 1.5em;
@@ -48,16 +49,17 @@
 
 .carouselSlide {
     position: relative;
-    min-width: 0;
-    max-height: 40dvh;
-    aspect-ratio: 1;
-    flex: 0 0 var(--slide-size);
+    max-width: min(33dvh, 320px);
+    max-height: min(33dvh, 320px);
+    flex: 0 0 100%;
+    aspect-ratio: 1 !important;
     background-color: var(--beige);
-    border-radius: 2rem;
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-end;
+
     cursor: pointer;
     background-size: cover;
     background-position: left top;
@@ -96,7 +98,8 @@
     background-size: 2px 2px;
     mix-blend-mode: overlay;
     z-index: 1;
-    border-radius: 2rem;
+    overflow: hidden;
+    border-radius: 20px;
 }
 
 @media (prefers-contrast: more) {
@@ -111,18 +114,6 @@
 
 .carouselSlide:not(:last-child) {
     margin-right: 1.5em;
-}
-
-@media (min-width: 750px) {
-    .carouselSlide {
-        flex: 0 0 var(--slide-size-sm);
-    }
-}
-
-@media (min-width: 1200px) {
-    .carouselSlide {
-        flex: 0 0 var(--slide-size-lg);
-    }
 }
 
 .carouselSlide svg {
@@ -155,7 +146,7 @@
     padding: 1em;
     z-index: 2;
     background: linear-gradient(transparent, var(--beige));
-    border-radius: 0 0 2rem 2rem;
+    border-radius: 0 0 20px 20px;
 }
 
 @media (prefers-contrast: more) {

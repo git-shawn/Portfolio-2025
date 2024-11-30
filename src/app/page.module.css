@@ -1,10 +1,19 @@
 .page {
+  box-sizing: border-box;
   width: 100dvw;
   height: 100dvh;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: clip;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
   overscroll-behavior: none;
+}
+
+@supports(padding:max(0px)) {
+  .page {
+    padding-left: max(1em, env(safe-area-inset-left));
+    padding-right: max(1em, env(safe-area-inset-right));
+  }
 }
 
 .bgImage {
@@ -15,7 +24,7 @@
   left: 0;
   width: 100dvw;
   height: 100dvh;
-  filter: contrast(130%) brightness(0.4) blur(var(--blur));
+  filter: contrast(140%) sepia(0.2) brightness(0.4) blur(var(--blur));
   transform: scale(1.09);
 }
 
@@ -25,38 +34,43 @@
 
 @media (prefers-contrast: more) {
   .bgImage {
-    filter: contrast(130%) brightness(0.2) blur(var(--blur));
+    filter: contrast(60%) sepia(0.2) brightness(0.3) blur(var(--blur));
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .bgImage {
-    filter: contrast(130%) brightness(0.4) blur(30px);
+    filter: contrast(140%) sepia(0.2) brightness(0.4) blur(30px);
   }
 }
 
 @media (prefers-contrast: more) and (prefers-reduced-motion: reduce) {
   .bgImage {
-    filter: contrast(130%) brightness(0.2) blur(30px);
+    filter: contrast(60%) sepia(0.2) brightness(0.3) blur(30px);
   }
 }
 
 .content {
+  box-sizing: border-box;
   scroll-snap-align: start;
   position: relative;
-  overflow: hidden;
+  overflow-x: visible;
   overscroll-behavior: none;
-  width: 100dvw;
+  width: 100%;
   height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 0px;
+
+  max-width: 1200px;
+  margin: auto;
 }
 
 .hero {
-  color: #FFC400;;
+  color: #FFC400;
+  ;
   max-width: 600px;
   display: flex;
   flex-direction: column;
@@ -98,18 +112,35 @@
   .content a:hover svg {
     transform: rotate(-45deg);
   }
+
   .content a:hover {
     text-decoration: underline;
   }
 }
 
+@media (max-width: 640px) {
+
+  .hero h1 {
+    font-size: 64px;
+  }
+  .content p,
+  .content a {
+    font-size: 16px;
+  }
+
+  .sectionHeader h2 {
+    font-size: 48px !important;
+    line-height: 1.3;
+  }
+}
+
 .work,
 .contact {
-  overflow: hidden;
+  overflow-x: visible;
   box-sizing: border-box;
   width: 100%;
   margin-top: 1em;
-  padding: 2.5em;
+  padding: .5em;
 }
 
 .work {
@@ -120,8 +151,9 @@
 }
 
 .contact {
-  margin-top: 4em;
-  overflow: scroll;
+  margin-top: 100px;
+  overflow-x: hidden;
+  overflow-y: scroll;
   overscroll-behavior: auto !important;
   display: flex;
   flex-direction: row;
@@ -129,6 +161,12 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 3em;
+}
+
+@media (max-height: 400px) {
+  .sectionHeader {
+    display: none;
+  }
 }
 
 .contact div {
