@@ -73,7 +73,7 @@ export default function Home() {
         <div className={styles.work}>
           <div className={styles.sectionHeader}>
             <h2>Code</h2>
-            <p>A smattering of things I've built by writing code.</p>
+            <p>A smattering of things I've built with code — mostly Swift and JavaScript.</p>
           </div>
           <Carousel slides={APPS} options={CAROUSEL_OPTIONS} />
         </div>
