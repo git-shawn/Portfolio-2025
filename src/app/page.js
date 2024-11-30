@@ -67,7 +67,6 @@ export default function Home() {
           src={bgImage}
           alt=""
           placeholder="empty"
-          className={styles.objectCover}
           fill
           priority
         />

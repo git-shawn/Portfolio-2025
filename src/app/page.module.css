@@ -19,6 +19,10 @@
   transform: scale(1.09);
 }
 
+.bgImage img {
+  object-fit: cover;
+}
+
 @media (prefers-contrast: more) {
   .bgImage {
     filter: contrast(130%) brightness(0.2) blur(var(--blur));
