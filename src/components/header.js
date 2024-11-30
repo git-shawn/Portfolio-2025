@@ -9,7 +9,7 @@ const Header = (props) => {
     const isViewingContact = useOnScreen(contactRef);
 
     return (
-        <header className={styles.header} style={opacityStyle}>
+        <header className={styles.header} style={opacityStyle} role="navigation">
             <div className={styles.row}>
                 <a href="#top" title="Back to top" className={styles.title}>Shawn</a>
                 <div className={styles.buttons}>
@@ -17,7 +17,7 @@ const Header = (props) => {
                     <a href="#writing" className={`${styles.button} ${isViewingWriting ? styles.active : ''}`}>Copy</a>
                     <a href="#contact" className={`${styles.button} ${isViewingContact ? styles.active : ''}`}>Contact</a>
                 </div>
-                <label>
+                <label title="Open menu">
                     <div className={styles.burger}>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" stroke="currentColor" strokeWidth=".6" fill="rgba(0,0,0,0)" strokeLinecap="round" style={{cursor: "pointer"}}>
                             <path d="M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7">

@@ -20,13 +20,13 @@ export default function Home() {
     {
       title: "QR Pop",
       href: "https://github.com/git-shawn/QR-Pop",
-      bgImage: "/qrpop.png",
+      bgImage: "/qrpop.webp",
       accent: "#FF4F00"
     },
     {
       title: "Daily Egyptian",
       href: "https://www.salukiadlab.com/post/the-daily-egyptian",
-      bgImage: "/de.png",
+      bgImage: "/de.webp",
       accent: "#5D0E07"
     },
   ]
@@ -34,7 +34,7 @@ export default function Home() {
     {
       title: "Duda",
       href: "https://blog.duda.co/blog-search?searchTerm=Shawn%20Davis",
-      bgImage: "/duda.png",
+      bgImage: "/duda.webp",
       accent: "#41147D"
     },
   ]
@@ -87,7 +87,7 @@ export default function Home() {
           <Carousel slides={WRITING} options={CAROUSEL_OPTIONS} />
         </div>
       </section>
-      <section ref={contactRef} id="contact" className={`${styles.content} ${styles.flexEnd}`}>
+      <section ref={contactRef} id="contact" className={`${styles.content}`}>
         <div className={styles.contact}>
           <div className={styles.sectionHeader}>
             <h2>Contact</h2>

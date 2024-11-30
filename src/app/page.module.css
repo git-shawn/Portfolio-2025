@@ -15,12 +15,30 @@
   left: 0;
   width: 100dvw;
   height: 100dvh;
-  background-image: url('/bozeman-resevoir-by-shawn.jpg');
+  background-image: url('/bozeman-resevoir-by-shawn.webp');
   background-position: center bottom;
   background-attachment: fixed;
   background-size: cover;
-  filter: contrast(130%) brightness(0.5) blur(var(--blur));
+  filter: contrast(130%) brightness(0.4) blur(var(--blur));
   transform: scale(1.09);
+}
+
+@media (prefers-contrast: more) {
+  .page::before {
+    filter: contrast(130%) brightness(0.2) blur(var(--blur));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page::before {
+    filter: contrast(130%) brightness(0.4) blur(30px);
+  }
+}
+
+@media (prefers-contrast: more) and (prefers-reduced-motion: reduce) {
+  .page::before {
+    filter: contrast(130%) brightness(0.2) blur(30px);
+  }
 }
 
 .content {
@@ -38,12 +56,18 @@
 }
 
 .hero {
-  color: #FFC400;
+  color: #ffcb45;
   max-width: 600px;
   display: flex;
   flex-direction: column;
   gap: 1em;
   margin: 1em;
+}
+
+@media (prefers-contrast: more) {
+  .hero {
+    color: var(--beige);
+  }
 }
 
 .hero h1 {
@@ -70,6 +94,15 @@
   transform: rotate(0deg);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .content a:hover svg {
+    transform: rotate(-45deg);
+  }
+  .content a:hover {
+    text-decoration: underline;
+  }
+}
+
 .work,
 .contact {
   overflow: hidden;
@@ -86,12 +119,6 @@
   justify-content: space-around;
 }
 
-@media (min-width: 1200px) {
-  .flexEnd {
-    justify-content: flex-end !important;
-  }
-}
-
 .contact {
   margin-top: 4em;
   overflow: scroll;
@@ -99,7 +126,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-items: flex-start;
+  align-items: center;
   flex-wrap: wrap;
   gap: 3em;
 }
