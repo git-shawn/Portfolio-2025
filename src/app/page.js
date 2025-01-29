@@ -86,7 +86,7 @@ export default function Home() {
           <div className={styles.work}>
             <div className={styles.sectionHeader}>
               <h2>Code</h2>
-              <p>A smattering of code that I've written, mainly using either Swift or JavaScript.</p>
+              <p>A collection of projects written in typically either JavaScript or Swift.</p>
             </div>
             <Carousel slides={APPS} options={CAROUSEL_OPTIONS} />
           </div>
@@ -95,7 +95,7 @@ export default function Home() {
           <div className={styles.work}>
             <div className={styles.sectionHeader}>
               <h2>Copy</h2>
-              <p>A collection of various writings, some personal and some professional.</p>
+              <p>Various writings created for personal and professional purposes.</p>
             </div>
             <Carousel slides={WRITING} options={CAROUSEL_OPTIONS} />
           </div>
