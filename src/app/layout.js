@@ -1,11 +1,5 @@
-import { Mona_Sans, Instrument_Serif } from 'next/font/google'
+import {Instrument_Serif } from 'next/font/google'
 import "./globals.css";
-
-const monaSans = Mona_Sans({
-  weight: ["500", "700"],
-  subsets: ['latin'],
-  variable: '--mona-sans'
-})
 
 const instrumentSerif = Instrument_Serif({
   weight: ["400"],
@@ -38,7 +32,7 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${monaSans.variable} ${instrumentSerif.variable}`}>
+      <body className={`${instrumentSerif.variable}`}>
         {children}
       </body>
     </html>
